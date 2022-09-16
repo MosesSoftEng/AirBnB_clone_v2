@@ -10,22 +10,14 @@ import models
 
 class State(BaseModel, Base):
     """ State class """
-    # # name = ""
-    if environ.get('HBNB_TYPE_STORAGE') == 'db':
+    __tablename__ = "states"
 
-        __tablename__ = "states"
-        name = Column(String(128), nullable=False)
+    name = Column(String(128), nullable=False)
 
-        cities = relationship("City",
-                              backref="state",
-                              cascade="all, delete-orphan",
-                              passive_deletes=True)
-    else:
-        name = ""
-
-    def __init__(self, *args, **kwargs):
-        """initializes state"""
-        super().__init__(*args, **kwargs)
+    cities = relationship("City",
+                            backref="state",
+                            cascade="all, delete-orphan",
+                            passive_deletes=True)
 
     if environ.get('HBNB_TYPE_STORAGE') != 'db':
         @property
