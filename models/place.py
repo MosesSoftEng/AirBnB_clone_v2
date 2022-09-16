@@ -37,10 +37,10 @@ class Place(BaseModel, Base):
 
     __tablename__ = "places"
 
-    city_id = Column(String(60), ForeignKey("cities.id",
-                        ondelete='CASCADE'), nullable=False)
+    city_id = Column(String(60), ForeignKey("cities.id", ondelete='CASCADE'),
+                     nullable=False)
     user_id = Column(String(60), ForeignKey("users.id",
-                        ondelete='CASCADE'), nullable=False)
+                     ondelete='CASCADE'), nullable=False)
     name = Column(String(128), nullable=False)
     description = Column(String(1024), nullable=True)
     number_rooms = Column(Integer, nullable=False, default=0)
@@ -53,13 +53,13 @@ class Place(BaseModel, Base):
 
     if environ.get('HBNB_TYPE_STORAGE') != 'db':
         reviews = relationship('Review', backref='place',
-                            cascade='all, delete-orphan',
-                            passive_deletes=True)
+                               cascade='all, delete-orphan',
+                               passive_deletes=True)
         amenities = relationship('Amenity', backref='place_amenities',
-                                    cascade='all, delete',
-                                    secondary=place_amenity,
-                                    viewonly=False,
-                                    passive_deletes=True)
+                                 cascade='all, delete',
+                                 secondary=place_amenity,
+                                 viewonly=False,
+                                 passive_deletes=True)
 
         @property
         def reviews(self):
