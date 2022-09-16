@@ -8,11 +8,11 @@ import models
 from models.amenity import Amenity
 
 metadata = Base.metadata
-place_amenity = Table('place_amenity', metadata,
-                      Column('place_id', String(60),
-                             ForeignKey('places.id', ondelete='CASCADE')),
-                      Column('amenity_id', String(60),
-                             ForeignKey('amenities.id', ondelete='CASCADE')))
+# place_amenity = Table('place_amenity', metadata,
+#                       Column('place_id', String(60),
+#                              ForeignKey('places.id', ondelete='CASCADE')),
+#                       Column('amenity_id', String(60),
+#                              ForeignKey('amenities.id', ondelete='CASCADE')))
 
 
 class Place(BaseModel, Base):
@@ -51,16 +51,11 @@ class Place(BaseModel, Base):
     longitude = Column(Float, nullable=True)
     amenity_ids = []
 
-    if environ.get('HBNB_TYPE_STORAGE') != 'db':
-        reviews = relationship('Review', backref='place',
-                               cascade='all, delete-orphan',
-                               passive_deletes=True)
-        amenities = relationship('Amenity', backref='place_amenities',
-                                 cascade='all, delete',
-                                 secondary=place_amenity,
-                                 viewonly=False,
-                                 passive_deletes=True)
+    reviews = relationship("Review", backref="place", cascade="delete")
+    amenities = relationship("Amenity", secondary="place_amenity",
+                             viewonly=False)
 
+    if environ.get('HBNB_TYPE_STORAGE') != 'db':
         @property
         def reviews(self):
             """Returns the list of Review instances with place_id equals to
