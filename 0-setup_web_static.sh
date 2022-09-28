@@ -29,7 +29,7 @@ echo "<html>
 </html>" > /data/web_static/releases/test/index.html
 
 # Create an endpoint to index.html
-sudo sed -i "s/server_name _;/&\n\tlocation \/hbnb_static {\n\t\talias \/data\/web_static\/current;\n\t\tindex.html;\n\t}/" 
+sudo sed -i "s/server_name _;/&\n\tlocation \/hbnb_static {\n\t\talias \/data\/web_static\/current;\n\t\tindex index.html;\n\t}/" /etc/nginx/sites-available/default
 
 # Restart nginx server
 sudo service nginx restart
