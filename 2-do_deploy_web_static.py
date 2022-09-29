@@ -1,20 +1,16 @@
 #!/usr/bin/python3
-# Fabfile to distribute an archive to a web server.
+# Module to upload static file contents
 import os.path
 from fabric.api import env
 from fabric.api import put
 from fabric.api import run
 
 env.hosts = ["3.235.227.53", "3.235.251.139"]
+env.user = ubuntu
 
 
 def do_deploy(archive_path):
-    """Distributes an archive to a web server.
-    Args:
-        archive_path (str): The path of the archive to distribute.
-    Returns:
-        If the file doesn't exist at archive_path or an error occurs - False.
-        Otherwise - True.
+    """Upload web content to web server using fab
     """
     if os.path.isfile(archive_path) is False:
         return False
