@@ -28,8 +28,11 @@ echo "<html>
   </body>
 </html>" > /data/web_static/releases/test/index.html
 
+# Setup custom http response header
+sudo sed -i "s/listen \[::\]:80 default_server;/&\n\tadd_header X-Served-By $HOSTNAME;/" /etc/nginx/sites-enabled/default
+
 # Create an endpoint to index.html
-sudo sed -i "s/server_name _;/&\n\tlocation \/hbnb_static {\n\t\talias \/data\/web_static\/current;\n\t\tindex index.html;\n\t}/" /etc/nginx/sites-available/default
+sudo sed -i "s/server_name _;/&\n\tlocation \/hbnb_static {\n\t\talias \/data\/web_static\/current;\n\t\tindex index.html;\n\t}/" /etc/nginx/sites-enabled/default
 
 # Restart nginx server
 sudo service nginx restart
