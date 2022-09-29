@@ -9,7 +9,8 @@ env.hosts = ["3.235.227.53", "3.235.251.139"]
 
 
 def do_deploy(archive_path):
-    """Distributes an archive to a web server.
+    """
+    Distributes an archive to a web server.
     """
     if os.path.isfile(archive_path) is False:
         return False
