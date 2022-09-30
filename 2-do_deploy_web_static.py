@@ -31,9 +31,10 @@ def do_deploy(archive_path):
     try:
         archive = archive_path.split('/')[1]
         no_ext_archive = archive.split('.')[0]
-    except:
+    except Exception:
         print('failed to get archive name from split...')
         return False
+
     uploaded = put(archive_path, '/tmp/')
     if uploaded.failed:
         return False
