@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+
+# Setup custom http response header
+sudo sed -i "s/listen \[::\]:80 default_server;/&\n\tadd_header X-Served-By $HOSTNAME;/" test_config
+
+# Custom error page
+sudo sed -i "s/server_name _;/&\n\terror_page 404 \/custom_404.html;\n\tlocation \/custom_404.html {\n\t\troot \/var\/www\/html;\n\t\tinternal;\n\t}\n/" test_config
+
+# Redirection
+sudo sed -i "s/server_name _;/&\n\tlocation \/redirect_me {\n\t\treturn 301 http:\/\/github.com\/;\n\t}\n/" test_config
+
+# Create an endpoint to index.html
+sudo sed -i "s/server_name _;/&\n\n\tlocation \/hbnb_static {\n\t\talias \/data\/web_static\/current;\n\t\tindex index.html;\n\t}\n/" test_config
+

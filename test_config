@@ -1,0 +1,9 @@
+
+listen [::]:80 default_server;
+	add_header X-Served-By DESKTOP-4H06I2N;
+
+
+server_name _;
+
+
+
