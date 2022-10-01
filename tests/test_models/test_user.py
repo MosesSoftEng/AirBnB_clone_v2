@@ -2,6 +2,7 @@
 """User model unit test module"""
 from tests.test_models.test_base_model import test_basemodel
 from models.user import User
+import pep8
 
 
 class test_User(test_basemodel):
@@ -32,3 +33,8 @@ class test_User(test_basemodel):
         """User model test"""
         new = self.value(password='qNCLmXj8kPbNrAVQd2s1')
         self.assertEqual(type(new.password), str)
+
+    def test_pep8(self):
+        """Check pep8 styling"""
+        p = pep8.StyleGuide(quiet=True).check_files(["models/user.py"])
+        self.assertEqual(p.total_errors, 0)
