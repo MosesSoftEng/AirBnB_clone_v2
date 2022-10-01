@@ -13,10 +13,10 @@ class test_User(test_basemodel):
         self.name = "User"
         self.value = User
 
-    # def test_first_name(self):
-    #     """User model test"""
-    #     new = self.value()
-    #     self.assertEqual(type(new.first_name), str)
+    def test_first_name(self):
+        """User model test"""
+        new = self.value(first_name='John')
+        self.assertEqual(type(new.first_name), str)
 
     # def test_last_name(self):
     #     """User model test"""
