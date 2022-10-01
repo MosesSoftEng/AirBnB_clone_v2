@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-""" """
+"""User model unit test module"""
 from tests.test_models.test_base_model import test_basemodel
 from models.user import User
 
 
 class test_User(test_basemodel):
-    """ """
+    """User model unit test class"""
 
     def __init__(self, *args, **kwargs):
         """ """
