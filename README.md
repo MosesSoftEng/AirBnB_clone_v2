@@ -169,3 +169,8 @@ class test_City(test_basemodel):
 		p = pep8.StyleGuide(quiet=True).check_files(["models/city.py"])
 		self.assertEqual(p.total_errors, 0)
 ```
+
+Run all unit tests
+```bash
+python3 -m unittest discover tests;
+```
