@@ -136,7 +136,7 @@ class HBNBCommand(cmd.Cmd):
                             continue
                 new_dict[key] = value
         return new_dict
-        
+
     def do_create(self, arg):
         """Creates a new instance of a class"""
         args = arg.split()
