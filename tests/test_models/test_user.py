@@ -23,10 +23,10 @@ class test_User(test_basemodel):
         new = self.value(last_name='Doe')
         self.assertEqual(type(new.last_name), str)
 
-    # def test_email(self):
-    #     """User model test"""
-    #     new = self.value()
-    #     self.assertEqual(type(new.email), str)
+    def test_email(self):
+        """User model test"""
+        new = self.value(email='john@mail.com')
+        self.assertEqual(type(new.email), str)
 
     # def test_password(self):
     #     """User model test"""
