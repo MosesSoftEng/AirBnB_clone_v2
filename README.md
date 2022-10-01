@@ -1,6 +1,4 @@
 # 0x03. AirBnB clone - Deploy static
-
-
 Install shellcheck version 0.3.3-1
 sudo apt-get update
 sudo apt-get install -y shellcheck=0.3.3
@@ -148,3 +146,18 @@ pycodestyle 100-clean_web_static.py
 Redo the task #0 but by using Puppet:
 
 chmod +x 101-setup_web_static.pp
+
+
+# Unit Tests
+## Test pep8 styles
+Install pep8 module
+```bash
+pip install pep8
+```
+
+Import into python file
+```python
+import pep8
+
+
+```
