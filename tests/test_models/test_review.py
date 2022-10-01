@@ -20,10 +20,10 @@ class test_review(test_basemodel):
         new = self.value(place_id="52463d70-b0e3-4edd-b1fb-5f33d7d12947")
         self.assertEqual(type(new.place_id), str)
 
-    # def test_user_id(self):
-    #     """Review model test"""
-    #     new = self.value()
-    #     self.assertEqual(type(new.user_id), str)
+    def test_user_id(self):
+        """Review model test"""
+        new = self.value(user_id="cbbc0259-4e45-447c-9139-887c4873b2f6")
+        self.assertEqual(type(new.user_id), str)
 
     # def test_text(self):
     #     """Review model test"""
