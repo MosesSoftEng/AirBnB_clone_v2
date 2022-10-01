@@ -25,7 +25,7 @@ class test_review(test_basemodel):
         new = self.value(user_id="cbbc0259-4e45-447c-9139-887c4873b2f6")
         self.assertEqual(type(new.user_id), str)
 
-    # def test_text(self):
-    #     """Review model test"""
-    #     new = self.value()
-    #     self.assertEqual(type(new.text), str)
+    def test_text(self):
+        """Review model test"""
+        new = self.value(text="Excepteur sint occaecat cupidatat non proident")
+        self.assertEqual(type(new.text), str)
