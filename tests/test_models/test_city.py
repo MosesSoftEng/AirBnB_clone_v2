@@ -26,3 +26,10 @@ class test_City(test_basemodel):
         """
         new = self.value(name=self.name, state_id='test_id')
         self.assertEqual(type(new.state_id), str)
+
+    def test_name(self):
+        """
+        Test if city name is of type string
+        """
+        new = self.value(name=self.name)
+        self.assertEqual(type(new.name), str)
