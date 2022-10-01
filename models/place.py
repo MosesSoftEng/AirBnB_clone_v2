@@ -55,6 +55,8 @@ class Place(BaseModel, Base):
     amenities = relationship("Amenity", secondary="place_amenity",
                              viewonly=False)
 
+    amenity_ids = []
+
     if environ.get('HBNB_TYPE_STORAGE') != 'db':
         @property
         def reviews(self):
