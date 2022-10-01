@@ -33,10 +33,10 @@ class test_Place(test_basemodel):
         new = self.value(description="test description")
         self.assertEqual(type(new.description), str)
 
-    # def test_number_rooms(self):
-    #     """ """
-    #     new = self.value()
-    #     self.assertEqual(type(new.number_rooms), int)
+    def test_number_rooms(self):
+        """ """
+        new = self.value(number_rooms=10)
+        self.assertEqual(type(new.number_rooms), int)
 
     # def test_number_bathrooms(self):
     #     """ """
