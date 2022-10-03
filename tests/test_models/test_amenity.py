@@ -34,7 +34,8 @@ class test_Amenity(test_basemodel):
         p = pep8.StyleGuide(quiet=True).check_files(["models/amenity.py"])
         self.assertEqual(p.total_errors, 0)
 
-    @unittest.skipIf(type(models.storage) == DBStorage,"Testing DBStorage")
-    def test_save_filestorage(self):
+    @unittest.skipIf(type(models.storage) == DBStorage, "Testing DBStorage")
+    def test_save(self):
         """Test save method with FileStorage."""
-        pass
+        new_amenity = self.value(name=self.name)
+        self.assertNotEqual(new_amenity.created_at, new_amenity.updated_at)
