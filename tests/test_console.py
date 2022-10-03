@@ -5,6 +5,7 @@ import unittest
 from unittest.mock import patch
 from io import StringIO
 from console import HBNBCommand
+import pep8
 
 
 class TestHBNBCommand(unittest.TestCase):
@@ -20,3 +21,8 @@ class TestHBNBCommand(unittest.TestCase):
         with patch("sys.stdout", new=StringIO()) as f:
             self.HBNB.onecmd("\n")
             self.assertEqual("", f.getvalue())
+
+    def test_pep8(self):
+        """Check pep8 styling"""
+        p = pep8.StyleGuide(quiet=True).check_files(["models/user.py"])
+        self.assertEqual(p.total_errors, 0)
