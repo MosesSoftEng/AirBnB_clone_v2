@@ -6,6 +6,8 @@ from unittest.mock import patch
 from io import StringIO
 from console import HBNBCommand
 import pep8
+import models
+from models.engine.db_storage import DBStorage
 
 
 class TestHBNBCommand(unittest.TestCase):
@@ -32,13 +34,14 @@ class TestHBNBCommand(unittest.TestCase):
             self.HBNB.onecmd("create")
             self.assertEqual("** class name missing **\n", f.getvalue())
 
-    # def test_create_state(self):
-    #     # Create a state
-    #     with patch("sys.stdout", new=StringIO()) as f:
-    #         self.HBNB.onecmd("create State")
-    #         state_id = f.getvalue().strip()
+    @unittest.skipIf(type(models.storage) == DBStorage, "Testing DBStorage")
+    def test_create_state(self):
+        # Create a state
+        with patch("sys.stdout", new=StringIO()) as f:
+            self.HBNB.onecmd("create State")
+            state_id = f.getvalue().strip()
 
-    #     # Check if state exist in state list by id
-    #     with patch("sys.stdout", new=StringIO()) as f:
-    #         self.HBNB.onecmd("all State")
-    #         self.assertIn(state_id, f.getvalue())
+        # Check if state exist in state list by id
+        with patch("sys.stdout", new=StringIO()) as f:
+            self.HBNB.onecmd("all State")
+            self.assertIn(state_id, f.getvalue())
