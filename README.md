@@ -174,3 +174,9 @@ Run all unit tests
 ```bash
 python3 -m unittest discover tests;
 ```
+
+
+## Test console
+```bash
+	echo "create" | ./console.py
+```
