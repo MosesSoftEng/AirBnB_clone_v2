@@ -56,7 +56,7 @@ class TestDBStorage(unittest.TestCase):
         Clear DBStorage session.
         """
         if type(models.storage) == DBStorage:
-            cls.storage._DBStorage__session.delete(cls.state)
+            # cls.storage._DBStorage__session.delete(cls.state)
             cls.storage._DBStorage__session.delete(cls.city)
             cls.storage._DBStorage__session.delete(cls.user)
             cls.storage._DBStorage__session.delete(cls.amenity)
