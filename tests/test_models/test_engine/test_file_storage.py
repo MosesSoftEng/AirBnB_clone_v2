@@ -55,11 +55,11 @@ class test_fileStorage(unittest.TestCase):
     #     new2 = BaseModel(**thing)
     #     self.assertNotEqual(os.path.getsize('file.json'), 0)
 
-    def test_save(self):
-        """ FileStorage save method """
-        new = BaseModel()
-        storage.save()
-        self.assertTrue(os.path.exists('file.json'))
+    # def test_save(self):
+    #     """ FileStorage save method """
+    #     new = BaseModel()
+    #     storage.save()
+    #     self.assertTrue(os.path.exists('file.json'))
 
     # def test_reload(self):
     #     """ Storage file is successfully loaded to __objects """
@@ -70,12 +70,12 @@ class test_fileStorage(unittest.TestCase):
     #         loaded = obj
     #     self.assertEqual(new.to_dict()['id'], loaded.to_dict()['id'])
 
-    def test_reload_empty(self):
-        """ Load from an empty file """
-        with open('file.json', 'w') as f:
-            pass
-        with self.assertRaises(ValueError):
-            storage.reload()
+    # def test_reload_empty(self):
+    #     """ Load from an empty file """
+    #     with open('file.json', 'w') as f:
+    #         pass
+    #     with self.assertRaises(ValueError):
+    #         storage.reload()
 
     def test_reload_from_nonexistent(self):
         """ Nothing happens if file does not exist """
@@ -103,8 +103,8 @@ class test_fileStorage(unittest.TestCase):
     #         temp = key
     #     self.assertEqual(temp, 'BaseModel' + '.' + _id)
 
-    def test_storage_var_created(self):
-        """ FileStorage object storage created """
-        from models.engine.file_storage import FileStorage
-        print(type(storage))
-        self.assertEqual(type(storage), FileStorage)
+    # def test_storage_var_created(self):
+    #     """ FileStorage object storage created """
+    #     from models.engine.file_storage import FileStorage
+    #     print(type(storage))
+    #     self.assertEqual(type(storage), FileStorage)
