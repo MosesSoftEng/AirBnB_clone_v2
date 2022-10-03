@@ -5,6 +5,9 @@ Amenty test class
 from tests.test_models.test_base_model import test_basemodel
 from models.amenity import Amenity
 import pep8
+from models.engine.db_storage import DBStorage
+import unittest
+import models
 
 
 class test_Amenity(test_basemodel):
@@ -30,3 +33,8 @@ class test_Amenity(test_basemodel):
         """Check pep8 styling"""
         p = pep8.StyleGuide(quiet=True).check_files(["models/amenity.py"])
         self.assertEqual(p.total_errors, 0)
+
+    @unittest.skipIf(type(models.storage) == DBStorage,"Testing DBStorage")
+    def test_save_filestorage(self):
+        """Test save method with FileStorage."""
+        pass
