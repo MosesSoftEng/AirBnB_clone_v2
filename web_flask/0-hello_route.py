@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Run Flask web application on socket 0.0.0.0:5000.
+"""Run Flask web application on socket 0.0.0.0:5000
 
 With route / strict_slashes=False and displaying "Hello HBNB!"
 """
@@ -9,7 +9,7 @@ from flask import Flask
 #   for location of other web files; templates.
 app = Flask(__name__)
 
-# Disable 404 status code on Accessing the URL with a trailing slash
+# Disable 404 status code on Accessing the URL with a trailing slash gloablly
 app.url_map.strict_slashes = False
 
 
@@ -20,4 +20,5 @@ def hello_HBNB():
     return 'Hello HBNB!'
 
 # Set socket to run the app on
-app.run(host='0.0.0.0', port=5000)
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', port=5000)
