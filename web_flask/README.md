@@ -320,6 +320,15 @@ touch web_flask/templates/9-states.html
 pep8 web_flask/9-states.py
 ```
 
+## [11. HBNB filters](10-hbnb_filters.py) [10-hbnb_filters.html](10-hbnb_filters.html)
+```bash
+touch web_flask/10-hbnb_filters.py
+chmod +x web_flask/10-hbnb_filters.py
+touch web_flask/templates/10-hbnb_filters.html
+
+pep8 web_flask/10-hbnb_filters.py
+```
+
 # :books: References
 1. [Web Server Gateway Interface](https://en.wikipedia.org/wiki/Web_Server_Gateway_Interface)
 2. [W3C validator for Holberton School](https://github.com/holbertonschool/W3C-Validator)
