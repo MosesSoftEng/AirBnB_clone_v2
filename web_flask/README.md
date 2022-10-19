@@ -232,6 +232,67 @@ guillaume@ubuntu:~$ curl 0.0.0.0:5000/number_template/python
 guillaume@ubuntu:~$ 
 ```
 
+
+## [5. Number template](5-number_template.py)
+Script to start Flask web application
+
+Requirements:
+    - Web application must be listening on 0.0.0.0, port 5000
+    - Routes use option strict_slashes=False in thier definitions
+
+Routes:
+    /
+        Display 'hello HBNB'
+    /HBNB
+        Display 'HBNB'
+    /c/<text>
+        Display 'C <text>'
+        Replace _ with space in <text>
+    /python/(<text>)
+        Display 'Python <text>', <text> default value 'is cool'
+        Replace _ with space in <text>
+    /number/<n>
+        Display 'n is a number' only if n is an integer
+    /number_template/<n> 
+        Display a HTML page only if n is an integer
+        H1 tag: 'Number: n' inside the tag BODY
+
+```bash
+touch web_flask/6-number_odd_or_even.py
+chmod +x web_flask/6-number_odd_or_even.py
+touch web_flask/templates/6-number_odd_or_even.html
+
+pep8 web_flask/6-number_odd_or_even.py
+
+# Start flask server file
+python3 -m web_flask.6-number_odd_or_even
+```
+
+### Tests
+```
+guillaume@ubuntu:~$ curl 0.0.0.0:5000/number_template/89 ; echo ""
+<!DOCTYPE html>
+<HTML lang="en">
+    <HEAD>
+        <TITLE>HBNB</TITLE>
+    </HEAD>
+    <BODY>
+        <H1>Number: 89</H1>
+    </BODY>
+</HTML>
+guillaume@ubuntu:~$ curl 0.0.0.0:5000/number_template/8.9 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>404 Not Found</title>
+<h1>Not Found</h1>
+<p>The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.</p>
+guillaume@ubuntu:~$ curl 0.0.0.0:5000/number_template/python 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>404 Not Found</title>
+<h1>Not Found</h1>
+<p>The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.</p>
+guillaume@ubuntu:~$ 
+```
+
 # :books: References
 1. [Web Server Gateway Interface](https://en.wikipedia.org/wiki/Web_Server_Gateway_Interface)
 2. [W3C validator for Holberton School](https://github.com/holbertonschool/W3C-Validator)
