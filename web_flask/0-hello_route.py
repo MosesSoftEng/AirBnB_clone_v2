@@ -1,8 +1,7 @@
 #!/usr/bin/python3
-"""Starts a Flask web application.
-The application listens on 0.0.0.0, port 5000.
-Routes:
-    /: Displays 'Hello HBNB!'
+"""Run Flask web application on socket 0.0.0.0:5000.
+
+With route / strict_slashes=False and displaying "Hello HBNB!"
 """
 from flask import Flask
 
