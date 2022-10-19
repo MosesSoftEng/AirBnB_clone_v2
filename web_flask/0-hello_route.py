@@ -14,11 +14,11 @@ app.url_map.strict_slashes = False
 
 
 # Routes
-@app.route("/")
-def hello_hbnb():
-    """Displays 'Hello HBNB!'"""
-    return "Hello HBNB!"
+@app.route('/')
+def hello_HBNB():
+    """Display 'Hello HBNB!'"""
+    return 'Hello HBNB!'
 
 # Set socket to run the app on only if accessed directly
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+    app.run(host='0.0.0.0', port=5000)
