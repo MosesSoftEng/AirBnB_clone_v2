@@ -1,7 +1,12 @@
 #!/usr/bin/python3
-"""Run Flask web application on socket 0.0.0.0:5000
+"""Script to start Flask web application on socket 0.0.0.0:5000
 
-With route / strict_slashes=False and displaying "Hello HBNB!"
+Requirements
+    - Web application must be listening on 0.0.0.0, port 5000
+    - Routes use option strict_slashes=False in thier definitions
+
+Routes
+    /   display hello HBNB
 """
 from flask import Flask
 
