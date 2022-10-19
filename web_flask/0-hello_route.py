@@ -10,11 +10,11 @@ from flask import Flask
 app = Flask(__name__)
 
 # Disable 404 status code on Accessing the URL with a trailing slash
-# app.url_map.strict_slashes=False
+app.url_map.strict_slashes=False
 
 
 # Routes
-@app.route("/", strict_slashes=False)
+@app.route("/")
 def hello_hbnb():
     """Displays 'Hello HBNB!'"""
     return "Hello HBNB!"
