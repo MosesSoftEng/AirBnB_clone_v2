@@ -15,6 +15,7 @@ app.url_map.strict_slashes = False
 # Routes
 @app.route('/')
 def hello_HBNB():
+    """Display "Hello HBNB!""""
     return 'Hello HBNB!'
 
 # Set socket to run the app on
