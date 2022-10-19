@@ -74,6 +74,7 @@ def show_number_template(n):
     """Display a HTML page only if n is an integer"""
     return render_template('5-number.html', n=n)
 
+
 # Set socket to run the app on
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000)
