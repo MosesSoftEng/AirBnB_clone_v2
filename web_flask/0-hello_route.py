@@ -19,6 +19,5 @@ def hello_HBNB():
     """Display 'Hello HBNB!'"""
     return 'Hello HBNB!'
 
-# Set socket to run the app on only if accessed directly
-if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5000)
+# Set socket to run the app on
+app.run(host='0.0.0.0', port=5000)
