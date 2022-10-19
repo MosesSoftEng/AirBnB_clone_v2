@@ -293,11 +293,22 @@ guillaume@ubuntu:~$ curl 0.0.0.0:5000/number_template/python
 guillaume@ubuntu:~$ 
 ```
 
-## [8. List of states ](7-states_list.py) [7-states_list.html](7-states_list.html)
+## [8. List of states](7-states_list.py) [7-states_list.html](7-states_list.html)
 ```bash
 touch web_flask/7-states_list.py
 chmod +x web_flask/7-states_list.py
 touch web_flask/templates/7-states_list.html
+
+pep8 web_flask/7-states_list.py
+```
+
+## [9. Cities by states](8-cities_by_states.py) [7-states_list.html](8-cities_by_states.html)
+```bash
+touch web_flask/7-states_list.py
+chmod +x web_flask/7-states_list.py
+touch web_flask/templates/7-states_list.html
+
+pep8 web_flask/7-states_list.py
 ```
 
 # :books: References
