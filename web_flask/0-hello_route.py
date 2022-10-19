@@ -1,9 +1,10 @@
 #!/usr/bin/python3
-from flask import Flask
-'''Run Flask web application on socket 0.0.0.0:5000.
+"""Run Flask web application on socket 0.0.0.0:5000.
 
-With route / strict_slashes=False and displaying Hello HBNB!
-'''
+With route / strict_slashes=False and displaying "Hello HBNB!"
+"""
+from flask import Flask
+
 # Create an instance of this Flask class passing the name of this module
 #   for location of other web files; templates.
 app = Flask(__name__)
