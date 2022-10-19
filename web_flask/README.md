@@ -311,6 +311,15 @@ touch web_flask/templates/7-states_list.html
 pep8 web_flask/7-states_list.py
 ```
 
+## [10. States and State](9-states.py) [7-states_list.html](8-cities_by_states.html)
+```bash
+touch web_flask/9-states.py
+chmod +x web_flask/9-states.py
+touch web_flask/templates/9-states.html
+
+pep8 web_flask/9-states.py
+```
+
 # :books: References
 1. [Web Server Gateway Interface](https://en.wikipedia.org/wiki/Web_Server_Gateway_Interface)
 2. [W3C validator for Holberton School](https://github.com/holbertonschool/W3C-Validator)
