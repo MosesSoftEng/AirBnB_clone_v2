@@ -7,8 +7,10 @@ Is a simple calling convention for web servers to forward requests to web applic
 
 ### Project setup
 ```bash
+# Create web_flask package
 mkdir web_flask
-touch web_flask/README.md
+touch web_flask/README.md web_flask/__init__.py
+chmod +x __init__.py
 
 # install pep8 v1.7
 sudo pip install pep8==1.7.0
@@ -16,7 +18,9 @@ sudo pip install pep8==1.7.0
 # Install flask
 sudo pip3 install Flask
 
-# Install 
+
+# Run flask web app for file in package web_flask
+python3 -m web_flask.<module name>
 ```
 
 # :computer: Tasks
@@ -24,10 +28,26 @@ sudo pip3 install Flask
 Script to start Flask web application on 0.0.0.0:5000 with route / strict_slashes=False and displaying "Hello HBNB!" 
 
 ```bash
-touch 0-hello_route.py __init__.py
-chmod +x 0-hello_route.py __init__.py
+touch web_flask/0-hello_route.py
+chmod +x web_flask/0-hello_route.py
 
-pep8 0-hello_route.py 
+pep8 web_flask/0-hello_route.py
+
+# Start flask server file
+python3 -m web_flask.0-hello_route
+```
+
+## [1. HBNB ](1-hbnb_route.py), [__init__.py]( )
+Script to start Flask web application on 0.0.0.0:5000 with route / strict_slashes=False and displaying "Hello HBNB!" 
+
+```bash
+touch web_flask/1-hbnb_route.py
+chmod +x web_flask/1-hbnb_route.py
+
+pep8 web_flask/1-hbnb_route.py
+
+# Start flask server file
+python3 -m web_flask.1-hbnb_route
 ```
 
 # :books: References
