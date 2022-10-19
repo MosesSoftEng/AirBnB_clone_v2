@@ -293,6 +293,13 @@ guillaume@ubuntu:~$ curl 0.0.0.0:5000/number_template/python
 guillaume@ubuntu:~$ 
 ```
 
+## [8. List of states ](7-states_list.py) [7-states_list.html](7-states_list.html)
+```bash
+touch web_flask/7-states_list.py
+chmod +x web_flask/7-states_list.py
+touch web_flask/templates/7-states_list.html
+```
+
 # :books: References
 1. [Web Server Gateway Interface](https://en.wikipedia.org/wiki/Web_Server_Gateway_Interface)
 2. [W3C validator for Holberton School](https://github.com/holbertonschool/W3C-Validator)
