@@ -10,15 +10,15 @@ from flask import Flask
 app = Flask(__name__)
 
 # Disable 404 status code on Accessing the URL with a trailing slash
-app.url_map.strict_slashes = False
+# app.url_map.strict_slashes=False
 
 
 # Routes
-@app.route('/')
+@app.route('/', strict_slashes=False)
 def hello_HBNB():
     """Display "Hello HBNB!""""
     return 'Hello HBNB!'
 
 # Set socket to run the app on only if accessed directly
 if __name__ == "__main__":
-app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=5000)
